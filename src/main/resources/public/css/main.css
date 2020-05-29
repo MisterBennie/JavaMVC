@@ -1,0 +1,19 @@
+a{
+    color: red;
+}
+
+input[type='submit'] {
+    background-color: lightblue;
+}
+
+button {
+    margin-right: 10px;
+}
+
+button.selected {
+    background-color: lightblue;
+}
+
+#test {
+    background-color:red;
+}
