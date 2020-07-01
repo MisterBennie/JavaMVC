@@ -2,6 +2,7 @@ package com.example.restservice.Models;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Person {
     final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -30,6 +31,10 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -80,8 +85,8 @@ public class Person {
     }
 
     public String getBirthDatePrint() {
-        String formattedDateTime = birthDate.format(formatter);
-        return formattedDateTime;
+        AtomicReference<String> formattedDateTime = new AtomicReference<>(birthDate.format(formatter));
+        return formattedDateTime.get();
     }
 
     public int getIsDirtyCounter() {
